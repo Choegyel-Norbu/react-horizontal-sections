@@ -1,0 +1,66 @@
+{
+  "name": "react-horizontal-sections",
+  "version": "0.1.0",
+  "description": "Full-screen sections that slide in sideways one step per scroll gesture, with keyboard, touch and reduced-motion support.",
+  "keywords": [
+    "react",
+    "horizontal-scroll",
+    "scroll-snap",
+    "fullpage",
+    "sections",
+    "slider",
+    "scrolljacking"
+  ],
+  "license": "MIT",
+  "author": "Choegyel Norbu",
+  "homepage": "https://github.com/Choegyel-Norbu/react-horizontal-sections#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Choegyel-Norbu/react-horizontal-sections.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Choegyel-Norbu/react-horizontal-sections/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

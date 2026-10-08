@@ -1,0 +1,98 @@
+/* src/styles.css */
+.rhs-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  --rhs-duration: 950ms;
+  --rhs-easing: cubic-bezier(0.72, 0, 0.18, 1);
+}
+.rhs-viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.rhs-track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--rhs-duration) var(--rhs-easing);
+}
+.rhs-section {
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.rhs-section__inner {
+  height: 100%;
+  opacity: 0;
+  transform: translate3d(70px, 0, 0);
+  transition: opacity calc(var(--rhs-duration) * 0.55) ease, transform calc(var(--rhs-duration) * 0.65) cubic-bezier(0.22, 0.75, 0.3, 1);
+}
+.rhs-section[data-active=true] .rhs-section__inner {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.rhs-section--plain .rhs-section__inner {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+.rhs-indicator {
+  position: absolute;
+  left: 32px;
+  bottom: 26px;
+  display: flex;
+  gap: 9px;
+  z-index: 2;
+}
+.rhs-dot {
+  width: 26px;
+  height: 5px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.18;
+  cursor: pointer;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+.rhs-dot--active {
+  opacity: 1;
+  width: 42px;
+}
+.rhs-root--stacked {
+  position: static;
+}
+.rhs-root--stacked .rhs-viewport {
+  position: static;
+  overflow: visible;
+}
+.rhs-root--stacked .rhs-track {
+  display: block;
+  width: 100%;
+  transform: none;
+  transition: none;
+}
+.rhs-root--stacked .rhs-section {
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
+}
+.rhs-root--stacked .rhs-section__inner {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rhs-track {
+    transition-duration: 0.01ms;
+  }
+  .rhs-section__inner {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

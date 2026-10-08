@@ -1,0 +1,17 @@
+body { margin: 0; }
+
+.rhs-section__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 104px var(--shell-x) 48px;
+}
+
+.inner {
+  width: min(1180px, 100%);
+  text-align: center;
+}
+
+.rhs-indicator { color: var(--dark); }
+
+.rhs-root--stacked .rhs-section__inner { padding: 110px var(--shell-x) 70px; }
